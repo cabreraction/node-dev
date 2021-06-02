@@ -1,0 +1,6 @@
+* spliting the codebase in multiple files.
+* Allowing code reuse 
+* encapsulation 
+* Managing dependencies
+
+---> A module is an actual unit of software, a module system is the set of tools that allows us to defined modules.

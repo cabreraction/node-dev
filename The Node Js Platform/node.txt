@@ -1,0 +1,27 @@
+1. THE NODE WAY
+    - Small Core:
+        * The core set of functionalities is set to the bare minimum, leaving the rest to userland. This is good
+            for maintainability and evolution.
+    - Small Modules:
+        * Make each program do one thing well.
+        * Small is beautiful
+        * DRY - Dont Repeat Yourself
+        * Extreme levels of reusability
+        * Code easier to understaind and use
+        * Code easier to test and maintain
+        * Perfect for the browser
+    - Small Surface Area:
+        * Usually expose only one functionality, do not expose internals.
+        * Single, unmistakably entry point.
+        * Packages created to be used, not extended. (Reduces use cases, simplifies implementations)
+    - Simplicity and Pragmatism
+        * Keep it simple, stupid (KISS)
+        * Simplicity is the most important consideration in a design
+        * Less effort, ships faster, easier to maintain and understaind
+
+1.1 HOW NODE WORKS
+    - I/O is slow
+    - There exists blocking and non blockin I/O
+
+2. THE REACTOR PATTERN
+3. JS ON THE SERVER
