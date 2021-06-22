@@ -85,7 +85,7 @@ function saveFile (filename, contents, cb) {
     }); 
 }
 
-function download (url, filename, cb) {
+export function download (url, filename, cb) {
     console.log(`Downloading ${url}`);
     superagent.get(url).end((err, res) => {
         if (err) {
