@@ -1,0 +1,4 @@
+The Sequential Iterator Pattern
+Executes a list of tasks in sequence by creating a function named iterator, which invokes the next
+available task in the collection and makes sure to invoke the next step of the iteration when the current
+task completes.
