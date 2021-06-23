@@ -1,6 +1,8 @@
 import fs from 'fs';
-import { urlToFilename } from './utils.js';
-import { download } from './spider.js';
+import path from 'path';
+import superagent from 'superagent';
+import mkdirp from 'mkdirp';
+import { urlToFilename, getPageLinks } from './utils.js';
 
 export function sequentialSpider (url, nesting, cb) {
     const filename = urlToFilename(url);
@@ -49,4 +51,29 @@ function spiderLinks (currentUrl, body, nesting, cb) {
     }
 
     iterate(0);
+}
+
+function saveFile (filename, contents, cb) {
+    mkdirp(path.dirname(filename), err => {
+        if(err) {
+            return cb(err);
+        } 
+        fs.writeFile(filename, contents, cb);
+    }); 
+}
+
+function download (url, filename, cb) {
+    console.log(`Downloading ${url}`);
+    superagent.get(url).end((err, res) => {
+        if (err) {
+            return cb(err);
+        }
+        saveFile(filename, res.text, err => {
+            if (err) {
+                return cb(err);
+            }
+            console.log(`Downloaded and saved: ${url}`);
+            cb(nul, res.text);
+        }) 
+    });
 }
